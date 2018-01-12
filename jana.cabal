@@ -34,6 +34,8 @@ executable jana
                      containers >= 0.4.2.1,
                      mtl >= 2.1.2,
                      pretty == 1.*,
-                     transformers >= 0.4.2
+                     transformers >= 0.4.2,
+                     criterion,
+                     silently
   if flag(static)
     ghc-options:     -static -optc-static -optl-static -optl-pthread

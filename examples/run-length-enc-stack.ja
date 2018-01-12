@@ -20,21 +20,18 @@ procedure encode(stack text, stack arc)
 procedure main()
     stack text  // uncompressed text
     stack arc   // compressed text as (n, char) pairs in reverse order
+    int n
+    int nn
 
-    local int x = 0
-    x += 12
-    push(x, text)
-    x += 53
-    push(x, text)
-    x += 53
-    push(x, text)
-    x += 53
-    push(x, text)
-    x += 32
-    push(x, text)
-    x += 32
-    push(x, text)
-    delocal int x = 0
-
-    show(text)
+    from n = 0 do
+            n += 1
+            local int x = 1
+            push(x, text)
+            delocal int x = 0
+    until n = 320
     call encode(text, arc)
+    /*from nn = 0 do
+        call encode(text, arc)
+        uncall encode(text, arc)
+        nn += 1
+    until nn = 1000*/
